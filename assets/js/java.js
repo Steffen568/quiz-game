@@ -1,46 +1,65 @@
-// const variables
 const startButton = document.getElementById('start-button')
+const nextButton = document.getElementById('next-button')
 const questionContainerElement = document.getElementById('question-box')
-const questioinElement = document.getElementById('question')
+const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
 
-let randomQuestions
-let currentQuestionInex
+let shuffledQuestion
+let currentQuestionIndex
 
-// press start button
-startButton.addEventListener('click', startQuiz)
+startButton.addEventListener('click', startGame)
 
-// start game function. --> onlcick hide start button, reveal container and start question function
-function startQuiz() {
-    startButton.classList.add('hide')
-    questionContainerElement.classList.remove('hide')
-    randomQuestions = questions.sort(() => Math.random() - .5)
-    currentQuestionInex = 0
-    setNextQuestion()
+
+
+
+
+function startGame() {
+   startButton.classList.add('hide')
+   shuffledQuestion = questions.sort(() => Math.random() - .5)
+   currentQuestionIndex = 0
+   questionContainerElement.classList.remove('hide')
+   setNexQuestion()
 }
 
-// questioin function
-function setNextQuestion() {
-    showQuestion( randomQuestions[currentQuestionInex])
+function setNexQuestion() {
+    resetState()
+    showQuestion(shuffledQuestion[currentQuestionIndex])
 }
 
-function showQuestion(questions) {
-    questioinElement.innerText = questions.questions
-}
+function showQuestion(question) {
+    questionElement.innerText = question.question
+    question.answers.forEach(answer => {
+        const button = document.createElement('button')
+        button.innerText = answer.text
+        button.classList.add('button')
+        if (answer.correct) {
+            button.dataset.correct = answer.correct
+        }
+        button.addEventListener('click', selectAnswer)
+        answerButtonsElement.appendChild(button)
+    })
+        
+};
 
-// question and answer array 
-const questions = [
-    {
-        questions: 'what is 2 + 2',
-        answers: [
-            {text: '4', correct: true},
-            {text:'22', correct: false},
-        ]
+function resetState() {
+    nextButton.classList.add('hide')
+    while (answerButtonsElement.firstChild) {
+        answerButtonsElement.removeChild
+        (answerButtonsElement.firstChild)
     }
-]
-
-
+}
 
 function selectAnswer() {
 
 }
+
+const questions = [
+
+    {
+        question: 'what is 2 +2?',
+        answers: [
+            { text: '4', correct: true },
+            { text: '22', correct: false }
+        ]
+    }
+]
