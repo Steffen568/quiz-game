@@ -9,7 +9,18 @@
 </head>
 <body>
     <div class="container">
+        <div id="starterC">
+            <h2 class="header-list">Quiz Game!</h2>
+            <ul class="header-list">
+                <li>The quiz is timed!</li>
+                <li>For every correct answer 10 seconds is added</li>
+                <li>For every wrong answer 10 seconds is subtracted</li>
+                <li>Press the start button to begin, save your score at the end of the quiz!</li>
+             </ul>
+        <button id="start-button" class="button">Start</button>
+        </div>
         <div id="question-box" class="hide">
+            <div id="countdown"></div>
             <div id="question">Question</div>
             <div id="answer-buttons" class="button-grid">
                 <button class="button">Answer 1</button>
@@ -20,9 +31,15 @@
 
         </div>
         <div class="control">
-            <button id="start-button" class="start-button button">Start</button>
-            <button id="next-button" class="next-button button hide">Next</button>
+            <button id="next-button" class="button hide">Next</button>
+            <button id="save-button" class="button hide">Save</button>
+            
         </div>
+        <div id="scoreContainer" class="hide">
+            <span id="scoreDisplay"></span>
+            <input type="text" name="initials" id="initials" />
+            <button id="submitScore" class="submit">Submit Score</button>
+          </div>
     </div>
 
 
