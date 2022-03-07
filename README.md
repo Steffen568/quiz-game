@@ -16,5 +16,6 @@
 - Link to deployed app: https://steffen568.github.io/quiz-game/
 
 ##Important bug information!
-The deployed link on GitPages will cause an error (https://i.imgur.com/n7h3d2d.png). If you clone the repo and launch to app from your own browser, there is no error. see above gif of the app in its working state
+
+- The deployed link on GitPages will cause an error (https://i.imgur.com/n7h3d2d.png). If you clone the repo and launch to app from your own browser, there is no error. see above gif of the app in its working state
 
