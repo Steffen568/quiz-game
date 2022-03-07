@@ -57,6 +57,7 @@ function setNexQuestion() {
 // generates answer buttons from array and captures input
 function showQuestion(question) {
     questionElement.innerText = question.question
+    questionElement.classList.add('control')
     question.answers.forEach(answer => {
         const button = document.createElement('button')
         button.innerText = answer.text
@@ -118,6 +119,7 @@ function showStats() {
     }
     questionElement.innerText = ''
     scoreContainer.classList.remove('hide')
+    scoreContainer.classList.add('score-box')
     answerButtonsElement.classList.add('hide')
     scoreContainer.innerHTML = `Your score is ${finalScore}! <div id="init">Name: <input type="text" name="initials" id="initials" placeholder="Enter Your Name"><button id="save-btn" class="save-btn btn" onclick="submitScores(event)">Save</button>`
     userName = document.getElementById('initials')
@@ -143,7 +145,7 @@ function displayScores() {
     clearInterval(runningTimer)
     countDownElement.innerHTML = ''
     scoreContainer.innerHTML = `<h2>Top 10 High Scores</h2><ul id="highScoresList"></ul>`
-    scoreContainer.classList.add('question-box')
+    scoreContainer.classList.add('score-box')
     var scoreList = document.getElementById('highScoresList')
     scoreList.innerHTML = highScores
     .map(score => {
