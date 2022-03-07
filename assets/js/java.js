@@ -159,34 +159,39 @@ function displayScores() {
 const questions = [
 
     {
-        question: 'Is cereal considered a soup?',
+        question: 'information is stored in Variables.',
         answers: [
-            { text: 'Yes', correct: false },
-            { text: 'No', correct: true }
+            { text: 'true', correct: true },
+            { text: 'flase', correct: false }
             
         ]
     },
     {
-        question: 'If cats could talk, would they lie to you?',
+        question: 'Inside which HTML element do we put the JavaScript?',
         answers: [
-            { text: 'Yes', correct: true },
-            { text: 'No', correct: false }
+            { text: '<js>', correct: false },
+            { text: '<scripting>', correct: false },
+            { text: '<script>', correct: true },
+            { text: '<javascript>', correct: false }
             
         ]
     },
     {
-        question:  'Who are the real villans in StarWars, the Jedi or the Empire?',
+        question:  'Where is the correct place to insert a JavaScript?',
         answers: [
-            { text: 'The Jedi, they are extreamists, and can read minds which is an invasion of privacy.', correct: true },
-            { text: 'The Empire, they wear too much black and the sith are scary', correct: false }
+            { text: 'The <body> section', correct: false },
+            { text: 'The <head> section', correct: false },
+            { text: 'Both <head> and <body> sections are correct', correct: true }
+            
             
         ]
     },
     {
-        question: 'Is it ethical to be a Dallas Cowboys fan?(selecting the wrong answer may or may not drop your credit score)',
+        question: 'What is the correct syntax for referring to an external script called "xxx.js"?',
         answers: [
-            { text: 'No, Jerry Jones is a bad man. ATT stadium is ugly and lacks anything resembleing a home field advantage. ', correct: true },
-            { text: 'Yes, I enjoy not winning anything significant since 1995 ', correct: false }
+            { text: '<script name="xxx.js">', correct: false },
+            { text: 'script href="xxx.js">', correct: false },
+            { text: '<script src="xxx.js">', correct: true }
         ]
     }
 ]
