@@ -131,7 +131,7 @@ function showStats() {
 function submitScores(e) {
     var score = {
         score: finalScore,
-        name: userName.value
+        // name: userName.value
     }
     highScores.push(score);
     highScores.sort((a, b) => b.score - a.score)
